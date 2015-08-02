@@ -301,6 +301,9 @@ on boot
     chmod 0220 /sys/class/power_supply/battery/network_search
     chown system system /sys/class/power_supply/battery/navigation
     chmod 0220 /sys/class/power_supply/battery/navigation
+    
+    chown system system /sys/android_touch/tap_to_wake
+    chmod 0644 /sys/android_touch/tap_to_wake
 
     # Wake on volume
     write /sys/keyboard/vol_wakeup 1

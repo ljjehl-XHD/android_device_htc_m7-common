@@ -198,6 +198,8 @@ static char *camera_fixup_setparams(int id, const char *settings)
 
     android::CameraParameters params;
     params.unflatten(android::String8(settings));
+    
+    params.set(android::CameraParameters::KEY_HTC_CAMERA, "1");
 
 #if !LOG_NDEBUG
     ALOGV("%s: original parameters:", __FUNCTION__);

@@ -59,6 +59,7 @@ const char CameraParameters::ISO_HJR[] = "ISO_HJR"; \
 const char CameraParameters::KEY_AE_BRACKET_HDR[] = "ae-bracket-hdr"; \
 const char CameraParameters::KEY_APP_OIS_SETTING[] = "ois-setting"; \
 const char CameraParameters::KEY_AUTO_EXPOSURE[] = "auto-exposure"; \
+const char CameraParameters::KEY_HTC_CAMERA[] = "htc-camera"; \
 const char CameraParameters::KEY_CAMERA_MODE[] = "camera-mode"; \
 const char CameraParameters::KEY_CAPTURE_MODE[] = "capture-mode"; \
 const char CameraParameters::KEY_CONTI_BURST_STATE[] = "contiburst-state"; \
@@ -352,6 +353,7 @@ struct FPSRange{ \
     static const char KEY_AE_BRACKET_HDR[]; \
     static const char KEY_APP_OIS_SETTING[]; \
     static const char KEY_AUTO_EXPOSURE[]; \
+    static const char KEY_HTC_CAMERA[]; \
     static const char KEY_CAMERA_MODE[]; \
     static const char KEY_CAPTURE_MODE[]; \
     static const char KEY_CONTI_BURST_STATE[]; \

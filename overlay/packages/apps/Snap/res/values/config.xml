@@ -16,6 +16,11 @@
 -->
 
 <resources>
+
+    <!-- Set's manufacturer specific parameters on startup.
+         Example: htc-camera=1;cam-mode=0 -->
+    <string name="manufacturer_key_values">htc-camera=1</string>
+
     <!-- Restart preview for back camera onPictureTaken -->
     <bool name="back_camera_restart_preview_onPictureTaken">true</bool>
   

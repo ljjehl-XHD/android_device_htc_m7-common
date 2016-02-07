@@ -62,6 +62,7 @@ BOARD_CHARGING_MODE_BOOTING_LPM := /sys/htc_lpm/lpm_mode
 
 # CMHW
 BOARD_HARDWARE_CLASS := $(LOCAL_PATH)/cmhw
+TARGET_TAP_TO_WAKE_NODE := "/sys/android_touch/tap_to_wake"
 
 # Filesystem
 BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216
@@ -90,11 +91,6 @@ BOARD_PROVIDES_LIBRIL := true
 BOARD_SEPOLICY_DIRS += \
     device/htc/m7-common/sepolicy
 
-BOARD_SEPOLICY_UNION += \
-    akmd.te \
-    radio.te \
-    tap2wake_dev.te \
-    cir_fw_update.te
 
 # USB
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file

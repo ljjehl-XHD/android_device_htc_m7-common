@@ -18,7 +18,6 @@
 //#define LOG_NDEBUG 0
 
 #include <stdio.h>
-#include <stdlib.h>
 #include <sys/ioctl.h>
 #include <fcntl.h>
 
@@ -37,6 +36,7 @@
 
 typedef struct m7_device {
     amplifier_device_t amp_dev;
+    uint32_t current_output_devices;
     audio_mode_t current_mode;
 } m7_device_t;
 
@@ -56,8 +56,10 @@ static int amp_set_output_devices(amplifier_device_t *device, uint32_t devices)
 {
     m7_device_t *dev = (m7_device_t *) device;
 
-    if ((devices & DEVICE_OUT_WIRED_HEADSET) ||
-            (devices & DEVICE_OUT_WIRED_HEADPHONE)) {
+    dev->current_output_devices = devices;
+
+    if ((dev->current_output_devices & DEVICE_OUT_WIRED_HEADSET) ||
+            (dev->current_output_devices & DEVICE_OUT_WIRED_HEADPHONE)) {
         rt5501_set_mode(dev->current_mode);
     }
 
@@ -123,6 +125,7 @@ static int amp_module_open(const hw_module_t *module, UNUSED const char *name,
     m7_dev->amp_dev.output_stream_standby = NULL;
     m7_dev->amp_dev.input_stream_standby = NULL;
 
+    m7_dev->current_output_devices = 0;
     m7_dev->current_mode = AUDIO_MODE_NORMAL;
 
     *device = (hw_device_t *) m7_dev;
@@ -147,3 +150,4 @@ amplifier_module_t HAL_MODULE_INFO_SYM = {
         .methods = &hal_module_methods,
     },
 };
+

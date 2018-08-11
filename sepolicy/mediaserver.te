@@ -4,3 +4,5 @@ allow mediaserver ion_debugfs:file r_file_perms;
 allow mediaserver sensorservice_service:service_manager find;
 allow mediaserver system_server:unix_stream_socket rw_socket_perms;
 binder_call(mediaserver, system_server);
+allow mediaserver sysfs_als:file { getattr open read write };
+allow mediaserver sysfs_system_soc:file { getattr read };

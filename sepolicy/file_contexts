@@ -22,6 +22,11 @@
 # CMHW
 /sys/devices/virtual/timed_output/vibrator/voltage_level   u:object_r:vibeamp_sysfs:s0
 
+/sys/devices/i2c-10/10-0040/adc_als_value                                         u:object_r:sysfs_als:s0
+/sys/devices/i2c-10/10-0040/als_gain                                              u:object_r:sysfs_als:s0
+/sys/devices/i2c-10/10-0040/als_lx                                                u:object_r:sysfs_als:s0
+/sys/devices/system/soc/soc0/id                                                   u:object_r:sysfs_system_soc:s0
+
 # Encryption
 /dev/block/platform/msm_sdcc\.1/by-name/extra  u:object_r:metadata_block_device:s0
 
